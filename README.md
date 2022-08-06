@@ -1,0 +1,1 @@
+Dieses Programm soll aus einem übergebenem Array die längste Reihe an aufeinanderfolgenden Ziffern ermitteln. Die Ausgabe gibt an, an welcher Stelle im Array diese Reihe beginnt, und wie lang diese Reihe ist. Das Array wird als Parameter beim Aufruf des Programms übergeben.
