@@ -9,20 +9,24 @@ void longest_consecutive_sequence(int a[], int arraylen)
 		printf("Array is empty.");
 		return;
 	}
-	int longest_sequence=0;
-	int recent_sequence=0;
-	int index_longest_sequence=0;
+	int longest_sequence=1;
+	int recent_sequence=1;
+	int index_longest_sequence=0;	
 	for(int i=0;i<arraylen;i++)
 	{
-		if(a[i]+1==(a[i+1]))
+		while(a[i]+1==(a[i+1]))
 		{
+			index_longest_sequence=i;
 			recent_sequence++;
 			if(recent_sequence>longest_sequence)
 			{
 				longest_sequence=recent_sequence;
 			}
+			i++;
+			index_longest_sequence--;
+		
 		}
-		else
+		if(a[i]+1!=(a[i+1]))
 		{
 			recent_sequence=0;
 		}
@@ -34,10 +38,10 @@ int main(){
 
 	int a[5];
 	a[0]=1;
-	a[1]=3;
-	a[2]=4;
+	a[1]=2;
+	a[2]=3;
 	a[3]=5;
-	a[4]=2;
+	a[4]=6;
 
 	int b = arraylength(a);
 	
