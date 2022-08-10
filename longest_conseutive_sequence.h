@@ -3,9 +3,24 @@
 #define arraylength(x) (sizeof(x) / sizeof((x)[0]))
 	
 
-void longest_consecutive_sequence(int a[], int arraylength)
+void longest_consecutive_sequence(FILE *input_stream)
 {
-    if(arraylength==0)
+    int length=0;
+    char line[100]={0};
+    while(fgets(line,100,input_stream))
+    {
+	    length++;
+    }
+    int array[length];
+
+    for(int i=0;i<length;i++)
+    {
+		array[i]=atoi(fgets(line,length,input_stream));
+    }
+
+
+	
+    if(length==0)
     {
         printf("Array is empty.");
         return;
@@ -15,12 +30,12 @@ void longest_consecutive_sequence(int a[], int arraylength)
     int index_longest_sequence=0;
     int index_current_sequence=0;
     int j=0;
-    for(int i=0; i<arraylength; i++)
+    for(int i=0; i<length; i++)
         {
-	    if(a[j]+1==(a[j+1]))
+	    if(array[j]+1==(array[j+1]))
 	    {
 		index_current_sequence=j;
-            	while(a[j]+1==(a[j+1]))
+            	while(array[j]+1==(array[j+1]))
             	{
                 	recent_sequence++;
                 	if(recent_sequence>longest_sequence)
@@ -46,7 +61,7 @@ void longest_consecutive_sequence(int a[], int arraylength)
     printf("The longest sequence of consecutive digits starts at index %i, and is %i digits long. \n",index_longest_sequence, longest_sequence);
     }
 
-    int main() {
+   /* int main() {
 
         int a[5];
         a[0]=0;
@@ -61,4 +76,4 @@ void longest_consecutive_sequence(int a[], int arraylength)
         //printf("%li \n",arraylength(a));
         return 0;
 
-    }
+    }*/
