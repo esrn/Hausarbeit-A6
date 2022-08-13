@@ -4,7 +4,7 @@
 
 void help()
 {
-	printf("Dieses Programm gibt Ihnen die den Index und die Länge der längesten Reihe aufeinanderfolgender Ziffern an. Die Ziffern sollen hierzu in einem Textdokument (.txt-Datei) jeweils mit einem Zeilenumbruch getrennt übergeben werden. Der Index wird mit der 1 beginnend durchnummeriert, also: erste Ziffer -> Index 1.")
+	printf("Dieses Programm gibt Ihnen die Zeilennummer und die Länge der längesten Reihe aufeinanderfolgender Ziffern an. Die Ziffern sollen hierzu in einem Textdokument (.txt-Datei) jeweils mit einem Zeilenumbruch getrennt übergeben werden.");
 	printf("Bitte nutzen Sie folgende Argumente: \n");
 	printf("-h: Hilfe \n");
 	printf("-p: Angabe des Dateipfads \n");
@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
 				help();
 				return 0;
 				break;
-			case 'p';
+			case 'p':
 				file = optarg;
 				break;
 		}
@@ -37,6 +37,6 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 	longest_consecutive_sequence(input_stream);
-	fclose(inputstream);
+	fclose(input_stream);
 	return 0;
 }
